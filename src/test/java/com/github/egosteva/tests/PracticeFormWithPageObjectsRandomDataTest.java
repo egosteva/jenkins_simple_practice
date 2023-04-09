@@ -9,15 +9,15 @@ import org.junit.jupiter.api.Test;
 import static com.github.egosteva.tests.RandomRegistrationTestData.*;
 import static io.qameta.allure.Allure.step;
 
+@Feature("Student registration form")
 public class PracticeFormWithPageObjectsRandomDataTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
-    @Feature("Student registration form")
     @Story("Fill registration form")
     @Owner("egosteva")
     @Severity(SeverityLevel.NORMAL)
-    @Link(value = "Testing", url = "https://demoqa.com/automation-practice-form/")
+    @Link(value = "Student registration form", url = "https://demoqa.com/automation-practice-form/")
     @DisplayName("Fill registration form and check results")
     @Tag("web")
     void fillPracticeFormTest() {
