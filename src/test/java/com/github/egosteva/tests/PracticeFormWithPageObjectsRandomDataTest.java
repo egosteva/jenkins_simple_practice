@@ -10,6 +10,7 @@ import static com.github.egosteva.tests.RandomRegistrationTestData.*;
 import static io.qameta.allure.Allure.step;
 
 @Feature("Student registration form")
+@DisplayName("Student registration form")
 public class PracticeFormWithPageObjectsRandomDataTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
