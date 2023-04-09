@@ -1,6 +1,8 @@
 package com.github.egosteva.tests;
 
 import com.github.egosteva.pages.RegistrationPage;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +13,12 @@ public class PracticeFormWithPageObjectsRandomDataTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
+    @Feature("Student registration form")
+    @Story("Fill registration form")
+    @Owner("egosteva")
+    @Severity(SeverityLevel.NORMAL)
+    @Link(value = "Testing", url = "https://demoqa.com/automation-practice-form/")
+    @DisplayName("Fill registration form and check results")
     @Tag("web")
     void fillPracticeFormTest() {
         step("Open registration form",
