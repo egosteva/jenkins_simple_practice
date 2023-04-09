@@ -36,8 +36,16 @@ dependencies {
             'com.github.javafaker:javafaker:1.0.2')
 }
 
-test {
+tasks.withType(Test) {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
 }
 
 task simple_test(type: Test) {
@@ -49,5 +57,23 @@ task simple_test(type: Test) {
 task web_test(type: Test) {
     useJUnitPlatform {
         includeTags("web")
+    }
+}
+
+task one_property_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("one_property")
+    }
+}
+
+task many_properties_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("many_properties")
+    }
+}
+
+task hello_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("hello")
     }
 }
