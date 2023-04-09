@@ -1,5 +1,6 @@
 package com.github.egosteva.tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import com.github.egosteva.pages.RegistrationPage;
 
@@ -9,6 +10,7 @@ public class PracticeFormWithPageObjectsRandomDataTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
+    @Tag("web")
     void fillPracticeFormTest() {
         registrationPage.openPage()
                 .removeBanners()
