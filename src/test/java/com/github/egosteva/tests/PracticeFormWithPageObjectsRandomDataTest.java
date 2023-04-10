@@ -24,11 +24,11 @@ public class PracticeFormWithPageObjectsRandomDataTest extends TestBase {
     void fillPracticeFormTest() {
         step("Open registration form",
                 () ->
-                        registrationPage.openPage());
+                        registrationPage.openPage())
+                .removeBanners();
         step("Fill form",
                 () -> {
-                    registrationPage.removeBanners()
-                            .setFirstName(firstName)
+                    registrationPage.setFirstName(firstName)
                             .setLastName(lastName)
                             .setUserEmail(email)
                             .setGender(gender)
