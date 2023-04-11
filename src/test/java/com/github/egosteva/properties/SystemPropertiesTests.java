@@ -3,8 +3,6 @@ package com.github.egosteva.properties;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import javax.swing.*;
-
 import static java.lang.String.format;
 
 public class SystemPropertiesTests {
@@ -40,12 +38,6 @@ public class SystemPropertiesTests {
     void webProperty4Test() {
         String browserName = System.getProperty("browser", "mozilla");
         System.out.println(browserName);
-
-        // gradle clean one_property_test
-        // mozilla
-
-        // gradle clean one_property_test -Dbrowser=safari
-        // safari
     }
 
     @Test
@@ -55,20 +47,11 @@ public class SystemPropertiesTests {
         String browserVersion = System.getProperty("browser_version", "99.0");
         System.out.println(browserName);
         System.out.println(browserVersion);
-
-        // gradle clean many_properties_test
-        // mozilla
-        // 99.0
-
-        // gradle clean many_properties_test -Dbrowser=safari -Dbrowser_version="100.0"
-        // safari
     }
 
     @Test
     @Tag("hello")
     void webProperty6Test() {
         System.out.println(format("Hello, %s!", System.getProperty("user_name","unknown student")));
-
-        // gradlew clean hello_test -Duser_name=Lena
     }
 }
